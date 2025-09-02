@@ -11,3 +11,17 @@ The program we're building is a CLI tool that:
     - Overwrite a file's contents
     - Execute the python interpreter on a file
 - Repeats step 2 until the task is complete (or it fails miserably, which is possible)
+## Python Set up
+Virtual environment:
+```Bash
+uv init your-project-name
+cd your-project-name
+uv venv
+source .venv/bin/activate #Activate the virtual environment
+```
+Use uv to add two dependencies to the project. They will be added to the file pyproject.toml:
+```Bash
+uv add google-genai==1.12.1
+uv add python-dotenv==1.1.0
+```
+To run the project using the uv virtual environment, you use: ```uv run main.py```
