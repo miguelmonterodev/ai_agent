@@ -16,4 +16,4 @@ try:
     print("Response tokens: ")#response.usage_metadata.candidates_token_count
 except IndexError:
     print("Error: we need argument as an input. Example: uv run main.py 'input'")
-    
+    sys.exit(1)
