@@ -25,3 +25,5 @@ uv add google-genai==1.12.1
 uv add python-dotenv==1.1.0
 ```
 To run the project using the uv virtual environment, you use: ```uv run main.py```
+## Gemini
+Large Language Models (LLMs) are the AI technology that have been making all the waves in the AI world recently. Products like: ChatGPT, Claude, Cursor, Google Gemini... Are all powered by LLMs. For the purposes of this project, you can think of an LLM as a smart text generator. It works just like ChatGPT: you give it a prompt, and it gives you back some text that it believes answers your prompt. We're going to use [Google's Gemini API](https://ai.google.dev/gemini-api) to power our agent in this course. It's reasonably smart, but more importantly for us, it has a free tier.
