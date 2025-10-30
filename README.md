@@ -28,9 +28,12 @@ To run the project using the uv virtual environment, you use: ```uv run main.py`
 ## Gemini
 Large Language Models (LLMs) are the AI technology that have been making all the waves in the AI world recently. Products like: ChatGPT, Claude, Cursor, Google Gemini... Are all powered by LLMs. For the purposes of this project, you can think of an LLM as a smart text generator. It works just like ChatGPT: you give it a prompt, and it gives you back some text that it believes answers your prompt. We're going to use [Google's Gemini API](https://ai.google.dev/gemini-api) to power our agent in this course. It's reasonably smart, but more importantly for us, it has a free tier.
 ### Tokens
-You can think of tokens as the currency of LLMs. They are the way that LLMs measure how much text they have to process. Tokens are roughly 4 characters for most models. It's important when working with LLM APIs to understand how many tokens you're using.
+You can think of tokens as the currency of LLMs. They are the way that LLMs **measure how much text they have to process**. Tokens are roughly 4 characters for most models. It's important when working with LLM APIs to understand how many tokens you're using.
 We'll be staying well within the free tier limits of the Gemini API, but we'll still monitor our token usage!
 ## Prerequisites
+- Python 3.10+ installed 
+- uv project and package manager
+- Access to a Unix-like shell (e.g. zsh or bash)
 - An account on [Google AI Studio](https://aistudio.google.com/prompts/new_chat)
 - ["Create API Key"](https://ai.google.dev/gemini-api/docs/api-key)
 ## Roles
@@ -43,3 +46,12 @@ Importantly, each message in the conversation has a "role". In the context of a 
 - user: "But why?"
 - model: "Because Douglas Adams said so."
 So, while our program will still be "one-shot" for now, let's update our code to store a list of messages in the conversation, and pass in the "role" appropriately.
+## Get the contents of a directory
+- [`os.path.abspath()`](https://docs.python.org/3/library/os.path.html#os.path.abspath): Get an absolute path from a relative path
+- [`os.path.join()`](https://docs.python.org/3/library/os.path.html#os.path.join): Join two paths together safely (handles slashes)
+- [`.startswith()`](https://docs.python.org/3/library/stdtypes.html#str.startswith): Check if a string starts with a substring
+- [`os.path.isdir()`](https://docs.python.org/3/library/os.path.html#os.path.isdir): Check if a path is a directory
+- [`os.listdir()`](https://docs.python.org/3/library/os.html#os.listdir): List the contents of a directory
+- [`os.path.getsize()`](https://docs.python.org/3/library/os.path.html#os.path.getsize): Get the size of a file
+- [`os.path.isfile()`](https://docs.python.org/3/library/os.path.html#os.path.isfile): Check if a path is a file
+- [`.join()`](https://docs.python.org/3/library/stdtypes.html#str.join): Join a list of strings together with a separator
