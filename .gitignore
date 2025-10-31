@@ -1,4 +1,4 @@
-__pycache__
+__pycache__/
 uv
 pyproject.toml
 .python-version
@@ -7,3 +7,6 @@ env
 .venv
 venv
 uv.lock
+*.py[oc]
+build/
+dist/

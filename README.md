@@ -46,7 +46,8 @@ Importantly, each message in the conversation has a "role". In the context of a 
 - user: "But why?"
 - model: "Because Douglas Adams said so."
 So, while our program will still be "one-shot" for now, let's update our code to store a list of messages in the conversation, and pass in the "role" appropriately.
-## Get the contents of a directory
+## Functions
+### Get directory content
 - [`os.path.abspath()`](https://docs.python.org/3/library/os.path.html#os.path.abspath): Get an absolute path from a relative path
 - [`os.path.join()`](https://docs.python.org/3/library/os.path.html#os.path.join): Join two paths together safely (handles slashes)
 - [`.startswith()`](https://docs.python.org/3/library/stdtypes.html#str.startswith): Check if a string starts with a substring
@@ -55,3 +56,21 @@ So, while our program will still be "one-shot" for now, let's update our code to
 - [`os.path.getsize()`](https://docs.python.org/3/library/os.path.html#os.path.getsize): Get the size of a file
 - [`os.path.isfile()`](https://docs.python.org/3/library/os.path.html#os.path.isfile): Check if a path is a file
 - [`.join()`](https://docs.python.org/3/library/stdtypes.html#str.join): Join a list of strings together with a separator
+### Get file content
+```python
+MAX_CHARS = 10000
+
+with open(file_path, "r") as f:
+    file_content_string = f.read(MAX_CHARS)
+```
+### Write file
+We'll give our agent the ability to write and overwrite files.
+## ai-agent to run arbitary python code
+Security risks:
+- We'll only allow the LLM to run code in a specific directory (the working_directory).
+- We'll use a 30-second timeout to prevent it from running indefinitely.
+**This program does not have all the security and safety features that a production AI agent would have. Use it as a learning purpose.**
+["subprocess.run"](https://docs.python.org/3/library/subprocess.html)
+```python
+subprocess.run(args=["python", file_path, arguments], cwd=abs_dir_path, timeout=30, capture_output=True)
+```
