@@ -74,3 +74,11 @@ Security risks:
 ```python
 subprocess.run(args=["python", file_path, arguments], cwd=abs_dir_path, timeout=30, capture_output=True)
 ```
+## System Prompt
+The system prompt sets the tone for the conversation, and can be used to:
+- Set the personality of the AI
+- Give instructions on how to behave
+- Provide context for the conversation
+- Set the "rules" for the conversation 
+## Building the function declaration
+We can use ["pydantic model genai.types.FunctionDeclaration"](https://googleapis.github.io/python-genai/genai.html#genai.types.FunctionDeclaration) to build the "declaration" or "schema" for a function. Again, this basically just tells the LLM how to use the function.
